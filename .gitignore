@@ -1,0 +1,10 @@
+# Saída da compilação
+build/
+
+# Configuração do VS Code (mantida no repositório)
+!.vscode/*
+
+# Arquivos gerados pelo sistema operacional
+Thumbs.db
+desktop.ini
+.DS_Store

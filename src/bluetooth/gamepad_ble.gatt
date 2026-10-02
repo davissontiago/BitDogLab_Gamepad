@@ -1,0 +1,17 @@
+// Serviços BLE oferecidos pelo controle. Este arquivo é convertido em
+// gamepad_ble.h durante a compilação (pico_btstack_make_gatt_header)
+
+// Serviço GAP: nome do dispositivo (preenchido em tempo de execução, pois
+// depende do ID da placa) e aparência "Gamepad" (0x03C4)
+PRIMARY_SERVICE, GAP_SERVICE
+CHARACTERISTIC, GAP_DEVICE_NAME, READ | DYNAMIC,
+CHARACTERISTIC, GAP_APPEARANCE, READ, C4 03
+
+// Informações do dispositivo: fabricante e VID/PID, usados pelo Windows
+#import <device_information_service.gatt>
+
+// Serviço HID: é por ele que o estado do controle chega ao PC
+#import <hids.gatt>
+
+PRIMARY_SERVICE, GATT_SERVICE
+CHARACTERISTIC, GATT_DATABASE_HASH, READ,
